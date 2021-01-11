@@ -1,0 +1,13 @@
+version: "2"
+services:
+  video-search-server:
+    build: .
+    volumes:
+      - ./:/app
+    ports:
+      - "${APP_PORT}:${APP_PORT}"
+    command: "yarn start"
+    env_file:
+      - .env
+    tty: true
+    stdin_open: true
